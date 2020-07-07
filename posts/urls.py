@@ -4,6 +4,7 @@ from django.urls import include,path
 
 router = routers.DefaultRouter()
 router.register(r'posts', views.postViewSet)
+router.register(r'comments', views.commentViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
