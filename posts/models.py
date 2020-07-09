@@ -13,10 +13,10 @@ class post(models.Model):
         return '{} by {}'.format(self.desc, self.user)
 
 class comment(models.Model):
-    # user=models.ForeignKey(User, on_delete=models.CASCADE)
+    user=models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(post, on_delete=models.CASCADE)
     comment=TextField(max_length=500, blank=False)
 
     def __str__(self):
-        return self.comment
+        return '{} by {}'.format(self.comment, self.user)
 
